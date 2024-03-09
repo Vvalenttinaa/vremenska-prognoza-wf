@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5CD292AF-895C-4AFA-A0A3-4223C118BC0A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VremenskaPrognozaApp</RootNamespace>
+    <AssemblyName>VremenskaPrognozaApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.1.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\Exceptions\DataAccessException.cs" />
+    <Compile Include="DataAccess\IAccount.cs" />
+    <Compile Include="DataAccess\ICity.cs" />
+    <Compile Include="DataAccess\ICountry.cs" />
+    <Compile Include="DataAccess\ITemperature.cs" />
+    <Compile Include="Forms\MeasurementDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MeasurementDetails.Designer.cs">
+      <DependentUpon>MeasurementDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MySql\MySqlAccount.cs" />
+    <Compile Include="DataAccess\MySql\MySqlAddress.cs" />
+    <Compile Include="DataAccess\MySql\MySqlCity.cs" />
+    <Compile Include="DataAccess\MySql\MySqlCountry.cs" />
+    <Compile Include="DataAccess\MySql\MySqlEmployee.cs" />
+    <Compile Include="DataAccess\MySql\MySqlInstruments.cs" />
+    <Compile Include="DataAccess\MySql\MySqlMeasurement.cs" />
+    <Compile Include="DataAccess\MySql\MySqlPrecipitation.cs" />
+    <Compile Include="DataAccess\MySql\MySqlPrecipitationName.cs" />
+    <Compile Include="DataAccess\MySql\MySqlTemperature.cs" />
+    <Compile Include="DataAccess\MySql\MySqlUtil.cs" />
+    <Compile Include="DataAccess\MySql\MySqlWeatherStation.cs" />
+    <Compile Include="DataAccess\MySql\MySqlWind.cs" />
+    <Compile Include="DataAccess\MySql\MySqlWindName.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddAddress.Designer.cs">
+      <DependentUpon>AddAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCity.Designer.cs">
+      <DependentUpon>AddCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCountryForm.Designer.cs">
+      <DependentUpon>AddCountryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEmployeeForm.Designer.cs">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddInstruments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddInstruments.Designer.cs">
+      <DependentUpon>AddInstruments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddMeasurement.Designer.cs">
+      <DependentUpon>AddMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin1.Designer.cs">
+      <DependentUpon>Admin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdressesViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdressesViewForm.Designer.cs">
+      <DependentUpon>AdressesViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CitiesForm.Designer.cs">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CountryForm.Designer.cs">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCity.Designer.cs">
+      <DependentUpon>EditCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCountry.Designer.cs">
+      <DependentUpon>EditCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditAddressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditAddressForm.Designer.cs">
+      <DependentUpon>EditAddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditStation.Designer.cs">
+      <DependentUpon>EditStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditMeasurementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditMeasurementForm.Designer.cs">
+      <DependentUpon>EditMeasurementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployersView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployersView.Designer.cs">
+      <DependentUpon>EmployersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeasurementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MeasurementsForm.Designer.cs">
+      <DependentUpon>MeasurementsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meteorologist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meteorologist.Designer.cs">
+      <DependentUpon>Meteorologist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StationViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StationViewForm.Designer.cs">
+      <DependentUpon>StationViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddStationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddStationForm.Designer.cs">
+      <DependentUpon>AddStationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\AddressDetails.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Measurement.cs" />
+    <Compile Include="Model\Precipitation.cs" />
+    <Compile Include="Model\PrecipitationName.cs" />
+    <Compile Include="Model\Temperature.cs" />
+    <Compile Include="Model\Wind.cs" />
+    <Compile Include="Model\WeatherInstruments.cs" />
+    <Compile Include="Model\WeatherStation.cs" />
+    <Compile Include="Model\WindName.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Theme.cs" />
+    <EmbeddedResource Include="Forms\EditMeasurementForm.resx">
+      <DependentUpon>EditMeasurementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeasurementDetails.resx">
+      <DependentUpon>MeasurementDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddAddress.resx">
+      <DependentUpon>AddAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCity.resx">
+      <DependentUpon>AddCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCountryForm.resx">
+      <DependentUpon>AddCountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddInstruments.resx">
+      <DependentUpon>AddInstruments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddMeasurement.resx">
+      <DependentUpon>AddMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin1.resx">
+      <DependentUpon>Admin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdressesViewForm.resx">
+      <DependentUpon>AdressesViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CitiesForm.resx">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CountryForm.resx">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCity.resx">
+      <DependentUpon>EditCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCountry.resx">
+      <DependentUpon>EditCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditAddressForm.resx">
+      <DependentUpon>EditAddressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditStation.resx">
+      <DependentUpon>EditStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployersView.resx">
+      <DependentUpon>EmployersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeasurementsForm.resx">
+      <DependentUpon>MeasurementsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meteorologist.resx">
+      <DependentUpon>Meteorologist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StationViewForm.resx">
+      <DependentUpon>StationViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddStationForm.resx">
+      <DependentUpon>AddStationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\city.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\country.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\station.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\country1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\city1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginn %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password1 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\countryColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\country in color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\city2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10351333.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weather station.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\universalWeather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\64-644459_cute-sun-smiling-transparent-library-techflourish-collections-clipart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m2i8K9H7H7N4G6Z5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8b7cce6c43e1c2a565da52e68f0bd81a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Theme1.xml" />
+    <Content Include="Themes\Theme2.xml" />
+    <Content Include="Themes\Theme3.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

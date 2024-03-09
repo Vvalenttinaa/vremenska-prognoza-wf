@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Theme>
+	<BackgroundColor>LightGray</BackgroundColor>
+	<TextColor>CharcoalGray</TextColor>
+
+	<ButtonColor>RoyalBlue</ButtonColor>
+	<ButtonTextColor>White</ButtonTextColor>
+
+	<LabelColor>DarkBlue</LabelColor>
+	<CheckBoxColor>Black</CheckBoxColor>
+
+	<TextFieldColor>DarkGray</TextFieldColor>
+	<TextFieldBorderColor>LightGray</TextFieldBorderColor>
+
+	<ListViewColor>LightSteelBlue</ListViewColor>
+	<ListViewColorHeader>RoyalBlue</ListViewColorHeader>
+	<SelectedListViewColor>Blue</SelectedListViewColor>
+
+	<FontName>Segoe UI</FontName>
+
+	<GroupBoxColor>LightGray</GroupBoxColor>
+	<GroupBoxTextColor>DarkBlue</GroupBoxTextColor>
+	<RadioButtonColor>DarkBlue</RadioButtonColor>
+
+	<ComboBoxColor>LightGray</ComboBoxColor>
+	<ComboBoxTextColor>RoyalBlue</ComboBoxTextColor>
+	<ComboBoxBorderColor>RoyalBlue</ComboBoxBorderColor>
+
+
+</Theme>
